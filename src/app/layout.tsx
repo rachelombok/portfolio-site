@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ImageKitProvider } from "@imagekit/next";
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -25,14 +26,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+ 
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ImageKitProvider urlEndpoint={process.env.NEXT_PUBLIC_URL_ENDPOINT}>
+
+        
         <Navigation/>
         {children}
         <Footer/>
+        </ImageKitProvider>
       </body>
     </html>
   );

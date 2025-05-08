@@ -1,18 +1,14 @@
 import Image from "next/image";
+import ProjectCover from "./ProjectCover";
+import { directoryPagesConstants, AllowedDirectoryPages } from "@/utils/utils";
 
-const PicturesLayout = () => {
+const PicturesLayout = ({ directory } : { directory: AllowedDirectoryPages } ) => {
 
+    const pageFolders = directoryPagesConstants[directory];
     return (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-            {[1,2,3,4,5,6,7,8].map(num => 
-              <Image
-              src='/awards.jpg'
-              alt='test image'
-              width={900}
-              height={400}
-              key={num}
-              className="h-auto w-full"
-              />  
+        <div className="grid md:grid-cols-4 grid-cols-2">
+            {pageFolders.map((path, i) => 
+            (<ProjectCover imagePath={path} title='Live Event' key={i}/>)
             )}
         </div>
     );
