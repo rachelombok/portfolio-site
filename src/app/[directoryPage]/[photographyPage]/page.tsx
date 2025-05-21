@@ -1,8 +1,6 @@
-import { redirect } from "next/navigation";
-import {
-  AllowedDirectoryPages,
-  AllowedPhotographyPageFolders,
-} from "@/utils/utils";
+import { photographyPageDetails } from "@/utils/utils";
+import GalleryContainer from "@/components/GalleryContainer";
+import Gallery from "@/components/Gallery";
 
 const photographyPage = async ({
   params,
@@ -10,28 +8,20 @@ const photographyPage = async ({
   params: Promise<{ photographyPage: string; directoryPage: string }>;
 }) => {
   const { directoryPage, photographyPage } = await params;
-  const validDirectoryPages: AllowedDirectoryPages[] = [
-    "events",
-    "street",
-    "portraits",
-    "concerts",
-    "film",
-  ];
-  const validPhotographyPages: string[] = ["dreamers"];
 
-  // @ts-ignore
-  // eslint-disable-next-line
-  if (!validDirectoryPages.includes(directoryPage.toLowerCase())) {
-    // redirects out of non photography pages not intended to nest
-    redirect(`/`);
-  } else if (!validPhotographyPages.includes(photographyPage)) {
-    redirect(`/${directoryPage}`);
-  }
+  const photographDetails = photographyPageDetails[photographyPage];
   return (
-    <div>
-      Photography Page route: {photographyPage} Directory page route:{" "}
-      {directoryPage}
-    </div>
+    <>
+      <div className="md:mx-20 md:my-16 my-8 md:space-y-8 space-y-4">
+        <h1 className="text-5xl titleFont font-bold uppercase">
+          {photographDetails?.name}
+        </h1>
+        <p className="text-lg">{photographDetails?.description}</p>
+      </div>
+      <GalleryContainer>
+        <Gallery folderPath={`/${directoryPage}/${photographyPage}/`} />
+      </GalleryContainer>
+    </>
   );
 };
 

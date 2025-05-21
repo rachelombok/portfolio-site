@@ -1,30 +1,187 @@
-export type AllowedDirectoryPages =
-  | "concerts"
-  | "portraits"
-  | "street"
-  | "film"
-  | "events";
+import base64 from "base-64";
 
-export type AllowedPhotographyPageFolders = "dreamers";
+// MY SITE TYPES
 
-type DirectoryPageConstantsType = {
-  [id in AllowedDirectoryPages]: AllowedPhotographyPageFolders[];
+export type PhotographyGalleryDetailsType = {
+  name: string;
+  year: string;
+  description: string;
 };
 
-type PhotographyPageDetailsType = {
-  [id in AllowedPhotographyPageFolders]: {
-    name: string;
-  };
-};
-
-export const directoryPagesConstants: DirectoryPageConstantsType = {
-  concerts: ["dreamers"],
-  portraits: [],
-  street: [],
-  film: [],
-  events: [],
+export type PhotographyPageDetailsType = {
+  [id in string]: PhotographyGalleryDetailsType;
 };
 
 export const photographyPageDetails: PhotographyPageDetailsType = {
-  dreamers: { name: "Dreamers" },
+  dreamers: {
+    name: "Dreamers",
+    year: "2022",
+    description:
+      "Dreamers during their headlining tour for their NYC show in November 2022.",
+  },
+  v100: {
+    name: "NYU V100",
+    year: "2022",
+    description:
+      "New York University's annual Violet 100 spirit week concert. Featuring performances from CamilosGarden, Destroy Lonely, Ken Carson, and headliner Baby Keem.",
+  },
+  almostmonday: {
+    name: "almostmonday",
+    year: "2025",
+    description:
+      "almostmonday headlining at Gramercy Theatre for the DIVE tour in February 2025. With opening act Adrian Lyles.",
+  },
+  youngrisingsons: {
+    name: "Young Rising Sons",
+    year: "2022",
+    description:
+      "Young Rising Sons opening for DREAMERS at the Gramercy Theatre in November 2022.",
+  },
+  kaashpaige: {
+    name: "kaash paige",
+    year: "2023",
+    description:
+      "Kaash Paige on her 'Me vs. Myself' tour at Baby's All Right in February 2023.",
+  },
+  embeihold: {
+    name: "Em Beihold",
+    year: "2025",
+    description:
+      "Em Beihold performs at her super small semi-secret piano tour at Joe's Pub in NYC. Featuring opening set by E. Woolf.",
+  },
+  theamericans: {
+    name: "The Americans",
+    year: "2023",
+    description:
+      "The Americans during their exclusive show at The Bitter End in NYC.",
+  },
+  patricia: {
+    name: "patricia",
+    year: "2019",
+    description: "",
+  },
+  minji: {
+    name: "minji",
+    year: "2018",
+    description: "",
+  },
+  theo: {
+    name: "theo",
+    year: "2022",
+    description: "",
+  },
+  cindy: {
+    name: "cindy",
+    year: "",
+    description: "",
+  },
+  isabel: {
+    name: "isabel",
+    year: "2022",
+    description: "Headshots for actress Isabel.",
+  },
+  bebe: {
+    name: "bebe",
+    year: "2022",
+    description:
+      'Artist Bebe Stockwell photographed for her summer single "Love Me Back".',
+  },
+  bkbg: {
+    name: "Brooklyn Botanical Garden",
+    year: "2022",
+    description: "",
+  },
+  chinatown: {
+    name: "Chinatown",
+    year: "2022",
+    description: "",
+  },
+  nybg: {
+    name: "New York Botanical Garden",
+    year: "2020",
+    description: "New York Botanical Garden during annual Orchid Show.",
+  },
+  rooseveltisland: {
+    name: "Roosevelt Island",
+    year: "2022",
+    description: "",
+  },
+  sanfrancisco: {
+    name: "San Francisco",
+    year: "2021",
+    description: "",
+  },
+  strawberryfest: {
+    name: "Strawberry Fest",
+    year: "2022",
+    description:
+      "New York University's Strawberry Fest, the annual free, open-to-the-public, music and arts festival organized by the student-run organization, Program Board. A tradition for the past 35 years, held every year at the beginning of May, where NYU and NYC communities come together to celebrate local art vendors, enjoy music, games, free food, and a 160-foot strawberry cake. Live performance by the artist Nicknames.",
+  },
+  comedyshow: {
+    name: "NYU Comedy Show",
+    year: "2019",
+    description:
+      "NYU Alumni Rachel Sennott and Ayo Edebiri host a stand-up comedy show for the student body.",
+  },
+};
+
+export const modifiedObjectCovers = {
+  dreamers: "50%_20%",
+  patricia: "50%_80%",
+  minji: "50%_40%",
+  youngrisingsons: "center_40%",
+  almostmonday: "center_20%",
+};
+
+export const fetcher = (url: string) =>
+  fetch(url, {
+    method: "GET",
+    headers: new Headers({
+      Authorization: `Basic ${base64.encode(
+        `private_qEiAJF2ojhNplKlug7H3Nrfvoaw=:`
+      )}`,
+    }),
+  }).then((res) => res.json());
+
+// IMAGEKIT TYPES
+
+type ImageKitAITagType = {
+  name: string;
+  confidence: number;
+  source: string;
+};
+
+export type ImageKitImageResponseType = {
+  fileId: string;
+  type: "file" | "file-version";
+  name: string;
+  filePath: string;
+  tags?: string[];
+  AITags?: ImageKitAITagType[];
+  versionInfo?: {
+    id: string;
+    name: string;
+  };
+  isPrivateFile?: boolean;
+  customCoordinates?: string;
+  url: string;
+  thumbnail?: string;
+  fileType: "image" | "non-image";
+  mime?: string;
+  width: number;
+  height: number;
+  size?: number;
+  hasAlpha?: boolean;
+  customMetadata?: Record<string, string>;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type ImageKitFolderResponseType = {
+  folderId: string;
+  type: "folder";
+  name: string;
+  createdAt: string;
+  updatedAt: string;
+  folderPath: string;
 };
