@@ -1,23 +1,27 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 const ContactForm: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
+  const [formMsg, setFormMsg] = useState<string>("");
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (form.current) {
       try {
+        setFormMsg("");
         await emailjs.sendForm(
           process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
           process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
           form.current,
           process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
         );
-        e.currentTarget.reset();
+        form.current.reset();
+        setFormMsg("Success!");
       } catch (error) {
+        setFormMsg("Something went wrong. Please try again.");
         console.log(error);
       }
     }
@@ -69,13 +73,15 @@ const ContactForm: React.FC = () => {
         required
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline mb-4"
       />
-
-      <button
-        type="submit"
-        className="bg-gray-400 hover:bg-pink-200 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer"
-      >
-        Send
-      </button>
+      <div className="flex items-center justify-between">
+        <button
+          type="submit"
+          className="bg-gray-400 hover:bg-pink-200 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer"
+        >
+          Send
+        </button>
+        <p className="mx-4 font-semibold">{formMsg}</p>
+      </div>
     </form>
   );
 };
