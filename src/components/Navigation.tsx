@@ -6,7 +6,7 @@ import { useState } from "react";
 import SmallNavDirectory from "./SmallNavDirectory";
 
 const Navigation = () => {
-  const [selectedTab, setSelectedTab] = useState<string>("");
+  const [selectedTab, setSelectedTab] = useState<string>("concerts");
   const [isSmallNavDirectoryShowing, setIsSmallNavDirectoryShowing] =
     useState<boolean>(false);
 

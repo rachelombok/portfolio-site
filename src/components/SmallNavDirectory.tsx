@@ -17,11 +17,11 @@ const SmallNavDirectory = ({
         aria-hidden="true"
       ></div>
       <div className="fixed inset-0 z-10 w-screen">
-        <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+        <div className="flex min-h-full items-end justify-center p-0 text-center sm:items-center sm:p-0">
           <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all w-full h-screen">
             <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
               <div className="sm:flex sm:items-start">
-                <div className="space-y- text-center sm:mx-auto mt-6">
+                <div className="space-y-8 text-center sm:mx-auto my-6">
                   <Link
                     href="/concerts"
                     onNavigate={() => setOpen(false)}
