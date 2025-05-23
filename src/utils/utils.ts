@@ -138,7 +138,7 @@ export const fetcher = (url: string) =>
     method: "GET",
     headers: new Headers({
       Authorization: `Basic ${base64.encode(
-        `private_qEiAJF2ojhNplKlug7H3Nrfvoaw=:`
+        process.env.NEXT_PUBLIC_IMAGEKIT_PRIVATE_KEY || ''
       )}`,
     }),
   }).then((res) => res.json());

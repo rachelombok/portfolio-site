@@ -8,7 +8,7 @@ const photographyPage = async ({
   params: Promise<{ photographyPage: string; directoryPage: string }>;
 }) => {
   const { directoryPage, photographyPage } = await params;
-
+ 
   const photographDetails = photographyPageDetails[photographyPage];
   return (
     <>

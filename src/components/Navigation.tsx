@@ -76,7 +76,7 @@ const Navigation = () => {
               <Link
                 href="/street"
                 className={`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent ${
-                  selectedTab == "streets" ? "bg-gray-200" : ""
+                  selectedTab == "street" ? "bg-gray-200" : ""
                 }`}
                 onClick={() => setSelectedTab("street")}
               >
