@@ -34,10 +34,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
- 
   return (
     <html lang="en">
-      <GoogleTagManager gtmId="G-C058C0VF6L"/>
       <Analytics/>
       <head>
       <link rel="stylesheet" href="https://use.typekit.net/siu1aok.css"></link>
@@ -45,7 +43,7 @@ export default function RootLayout({
       <link rel='apple-touch-icon' href='/apple-icon/data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🩰</text></svg>'/>
     
       </head>
-      
+      <GoogleTagManager gtmId={`${process.env.GTAG_CODE}`}/>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
