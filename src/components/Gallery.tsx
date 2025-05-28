@@ -54,6 +54,7 @@ const Gallery = ({
             width={1900}
             height={300}
             className="bg-gray-200"
+            quality={90}
             style={
               showPlaceholder
                 ? {

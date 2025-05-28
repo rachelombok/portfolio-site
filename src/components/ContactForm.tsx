@@ -22,7 +22,7 @@ const ContactForm: React.FC = () => {
         setFormMsg("Success!");
       } catch (error) {
         setFormMsg("Something went wrong. Please try again.");
-        console.log(error);
+        console.error(error);
       }
     }
   };

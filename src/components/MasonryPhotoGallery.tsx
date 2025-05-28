@@ -1,9 +1,11 @@
 "use client";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import { Image } from "@imagekit/next";
+import { Image, buildSrc } from "@imagekit/next";
 import { ImageKitImageResponseType } from "@/utils/utils";
+import { useState } from "react";
 
 const MasonryPhotoGallery = ({ photos }: { photos: [] }) => {
+  const [showPlaceholder, setShowPlaceholder] = useState<boolean>(true);
   return (
     <div>
       <ResponsiveMasonry
@@ -14,10 +16,28 @@ const MasonryPhotoGallery = ({ photos }: { photos: [] }) => {
             <Image
               key={photo.filePath}
               src={photo.filePath}
-              width={200}
-              height={400}
+              width={photo.width}
+              quality={90}
+              height={photo.height}
               alt={`photo for ${photo.filePath}`}
               className="w-full"
+              style={
+                showPlaceholder
+                  ? {
+                      backgroundImage: `url(${buildSrc({
+                        urlEndpoint: process.env.NEXT_PUBLIC_URL_ENDPOINT || "",
+                        src: photo.filePath,
+                        transformation: [
+                          {
+                            quality: 10,
+                            blur: 90,
+                          },
+                        ],
+                      })})`,
+                    }
+                  : {}
+              }
+              onLoad={() => setShowPlaceholder(false)}
             />
           ))}
         </Masonry>

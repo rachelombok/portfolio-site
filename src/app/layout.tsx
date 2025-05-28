@@ -10,6 +10,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import TransitionPageWrapper from "@/components/TransitionPageWrapper";
+import VercelAnalyticsWrapper from "@/components/VercelAnalyticsWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Analytics/>
+      <VercelAnalyticsWrapper/>
       <head>
       <link rel="stylesheet" href="https://use.typekit.net/siu1aok.css"></link>
       <link rel='icon' href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🩰</text></svg>'/>
@@ -45,7 +46,7 @@ export default function RootLayout({
       </head>
       <GoogleTagManager gtmId={`${process.env.GTAG_CODE}`}/>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased mx-auto max-w-[130rem]`}
       >
         <ImageKitProvider urlEndpoint={process.env.NEXT_PUBLIC_URL_ENDPOINT}>
 

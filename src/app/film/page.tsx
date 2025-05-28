@@ -14,7 +14,7 @@ const FilmPage = () => {
     }
   );
   return (
-    <div className="">
+    <div className="mx-auto">
       <ContentLayout>
         <MasonryPhotoGallery photos={data || []} />
       </ContentLayout>
