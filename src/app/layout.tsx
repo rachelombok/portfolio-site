@@ -3,8 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ImageKitProvider } from "@imagekit/next";
 import { GoogleTagManager } from '@next/third-parties/google';
-import { Analytics } from "@vercel/analytics/next"
-
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";

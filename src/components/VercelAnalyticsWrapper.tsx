@@ -1,11 +1,8 @@
 'use client';
 
 import { Analytics } from '@vercel/analytics/react';
-import { usePathname, useSearchParams } from 'next/navigation';
 
 export default function VercelAnalyticsWrapper() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   return (
     <Analytics
