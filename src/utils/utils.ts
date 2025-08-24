@@ -55,6 +55,11 @@ export const photographyPageDetails: PhotographyPageDetailsType = {
     description:
       "The Americans during their exclusive show at The Bitter End in NYC.",
   },
+  haidenhenderson: {
+    name: "Haiden Henderson",
+    year: "2025",
+    description: "Haiden Henderson at his late show on The Tension Tour at Mercury Lounge in NYC."
+  },
   patricia: {
     name: "patricia",
     year: "2019",
