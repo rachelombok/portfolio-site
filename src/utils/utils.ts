@@ -91,6 +91,36 @@ export const photographyPageDetails: PhotographyPageDetailsType = {
     description:
       'Artist Bebe Stockwell photographed for her summer single "Love Me Back".',
   },
+  hana: {
+    name: "hana",
+    year: "2025",
+    description: "Hana Yang."
+  },
+  alexandra_audrey: {
+    name: "Alexanda & Audrey",
+    year: "2025",
+    description: "Alexandra Hutchinson & Audrey Marinda."
+  },
+  jordyn: {
+    name: "jordyn",
+    year: "2025",
+    description: "Jordyn Thompson."
+  },
+  adrian: {
+    name: "adrian",
+    year: "2025",
+    description: "Adrian Arellano."
+  },
+  jolynn: {
+    name: "jolynn",
+    year: "2025",
+    description: "Jolynn Michelle Carpenter."
+  },
+  shannon: {
+    name: "shannon",
+    year: "2025",
+    description: "Shannon Milligan."
+  },
   bkbg: {
     name: "Brooklyn Botanical Garden",
     year: "2022",
@@ -136,6 +166,12 @@ export const modifiedObjectCovers = {
   minji: "50%_40%",
   youngrisingsons: "center_40%",
   almostmonday: "center_20%",
+  hana: "center_20%",
+  jordyn: "center_25%",
+  adrian: "center_25%",
+  jolynn: "center_5%",
+  shannon: "center_40%",
+
 };
 
 export const fetcher = (url: string) =>
