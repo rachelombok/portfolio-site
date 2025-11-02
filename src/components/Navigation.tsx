@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import SmallNavDirectory from "./SmallNavDirectory";
+import { cn } from "@/lib/utils";
 
 const Navigation = () => {
   const [selectedTab, setSelectedTab] = useState<string>("");
@@ -50,70 +51,59 @@ const Navigation = () => {
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
               <Link
                 href="/concerts"
-                className={`block py-2 px-3 rounded-sm  md:p-0 ${
-                  selectedTab == "concerts" ? "bg-gray-200" : ""
-                }`}
+                className={cn(`block py-2 px-3 rounded-sm  md:p-0`, selectedTab == "concerts" ? "text-neutral-800" : "")}
                 aria-current="page"
                 onClick={() => setSelectedTab("concerts")}
               >
-                <li className="p-2 rounded-sm hover:bg-gray-200 active:bg-pink-200 active:text-gray-50 ">
+                <li className={cn("p-2 rounded-sm text-neutral-400 selected:text-neutral-800 font-semibold hover:text-neutral-800 active:bg-pink-200 active:text-pink-50 ", selectedTab == "concerts" ? "text-neutral-800" : "")}
+                >
                   Concerts
                 </li>
               </Link>
 
               <Link
                 href="/portraits"
-                className={`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent ${
-                  selectedTab == "portraits" ? "bg-gray-200" : ""
-                }`}
+                className={cn(`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent`, selectedTab == "portraits" ? "text-neutral-800" : "")}
                 onClick={() => setSelectedTab("portraits")}
               >
-                <li className="p-2 rounded-sm hover:bg-gray-200 active:bg-pink-200 active:text-gray-50">
+                <li className={cn("p-2 rounded-sm text-neutral-400 selected:text-neutral-800 font-semibold hover:text-neutral-800 active:bg-pink-200 active:text-gray-50 ", selectedTab == "portraits" ? "text-neutral-800" : "")}>
                   Portraits
                 </li>
               </Link>
 
               <Link
                 href="/street"
-                className={`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent ${
-                  selectedTab == "street" ? "bg-gray-200" : ""
-                }`}
+                className={cn(`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent`, selectedTab == "street" ? "text-neutral-800" : "")}
                 onClick={() => setSelectedTab("street")}
               >
-                <li className="p-2 rounded-sm hover:bg-gray-200 active:bg-pink-200 active:text-gray-50">
+                <li className={cn("p-2 rounded-sm text-neutral-400 selected:text-neutral-800 font-semibold hover:text-neutral-800 active:bg-pink-200 active:text-gray-50 ", selectedTab == "street" ? "text-neutral-800" : "")}>
                   Street
                 </li>
               </Link>
 
               <Link
                 href="/film"
-                className={`block py-2 px-3 rounded-sm  md:border-0 md:p-0 md:dark:hover:bg-transparent ${
-                  selectedTab == "film" ? "bg-gray-200" : ""
-                }`}
+                className={cn(`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent`, selectedTab == "film" ? "text-neutral-800" : "")}
                 onClick={() => setSelectedTab("film")}
               >
-                <li className="p-2 rounded-sm hover:bg-gray-200 active:bg-pink-200 active:text-gray-50">
+                <li className={cn("p-2 rounded-sm text-neutral-400 selected:text-neutral-800 font-semibold hover:text-neutral-800 active:bg-pink-200 active:text-gray-50 ", selectedTab == "film" ? "text-neutral-800" : "")}>
                   Film
                 </li>
               </Link>
 
               <Link
                 href="/events"
-                className={`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent ${
-                  selectedTab == "events" ? "bg-gray-200" : ""
-                }`}
+                className={cn(`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent`, selectedTab == "events" ? "text-neutral-800" : "")}
                 onClick={() => setSelectedTab("events")}
               >
-                <li className="p-2 rounded-sm hover:bg-gray-200 active:bg-pink-200 active:text-gray-50">
+                <li className={cn("p-2 rounded-sm text-neutral-400 selected:text-neutral-800 font-semibold hover:text-neutral-800 active:bg-pink-200 active:text-gray-50 ", selectedTab == "events" ? "text-neutral-800" : "")}>
                   Events
                 </li>
               </Link>
 
               <Link
                 href="/about"
-                className={`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent font-semibold ${
-                  selectedTab == "about" ? "bg-gray-200" : ""
-                }`}
+                className={cn(`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent font-semibold`, selectedTab == "about" ? "bg-gray-200" : "")}
                 onClick={() => setSelectedTab("about")}
               >
                 <li className="p-2 rounded-sm hover:bg-gray-200 active:bg-pink-200 active:text-gray-50">
@@ -124,9 +114,7 @@ const Navigation = () => {
               <Link
                 type="button"
                 href="/contact"
-                className={`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent font-semibold ${
-                  selectedTab == "contact" ? "bg-gray-200" : ""
-                }`}
+                className={cn(`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent font-semibold`, selectedTab == "contact" ? "bg-gray-200" : "")}
                 onClick={() => setSelectedTab("contact")}
               >
                 <li className="p-2 rounded-sm hover:bg-gray-200 active:bg-pink-200 active:text-gray-50">
@@ -148,11 +136,11 @@ const Navigation = () => {
             </ul>
           </div>
         </div>
-      </nav>
+      </nav >
       {isSmallNavDirectoryShowing && (
         <SmallNavDirectory setOpen={setIsSmallNavDirectoryShowing} />
       )}
-    </div>
+    </div >
   );
 };
 

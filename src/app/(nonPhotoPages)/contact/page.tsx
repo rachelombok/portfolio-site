@@ -5,7 +5,7 @@ const Contact = () => {
       <p className="md:text-5xl text-4xl font-bold my-8 uppercase">
         Contact 📲
       </p>
-      <p className="pb-8 md:text-lg text-md">
+      <p className="pb-8 md:text-lg text-md text-muted-foreground">
         if you wish to contact me, fill out this form or{" "}
         <a
           className="link underline hover:text-pink-200"

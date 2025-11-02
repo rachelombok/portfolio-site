@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div>
       <p className="md:text-5xl text-4xl font-bold my-8">hi, this is rachel 👋</p>
-      <div className="space-y-8 md:text-lg text-md mb-8">
+      <div className="space-y-8 md:text-lg text-md mb-8 text-muted-foreground">
         <p >
           i am a hobbyist photographer, and this is my portfolio, <a href="https://github.com/rachelombok/portfolio-site" className="link underline text-zinc-800 hover:text-pink-200" target="_blank"
             rel="noopener">built by me</a>. i received a
@@ -19,7 +19,7 @@ const About = () => {
           most pictures here were shot with a nikon d3200 or a minolta xg7.{" "}
         </p>
       </div>
-      <Image src="/me.png" alt="A photo of me sitting on a bench in Elizabeth Garden in NYC, on Canon EOD." width={500} height={100} className="mx-auto"/>
+      <Image src="/me.png" alt="A photo of me sitting on a bench in Elizabeth Garden in NYC, on Canon EOD." width={500} height={100} className="mx-auto" />
     </div>
   );
 };
