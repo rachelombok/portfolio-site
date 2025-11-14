@@ -25,11 +25,17 @@ export const photographyPageDetails: PhotographyPageDetailsType = {
     description:
       "New York University's annual Violet 100 spirit week concert. Featuring performances from CamilosGarden, Destroy Lonely, Ken Carson, and headliner Baby Keem.",
   },
-  almostmonday: {
-    name: "almostmonday",
+  almostmonday_feb: {
+    name: "almostmonday - FEB",
     year: "2025",
     description:
       "almostmonday headlining at Gramercy Theatre for the DIVE tour in February 2025. With opening act Adrian Lyles.",
+  },
+  almostmonday_nov: {
+    name: "almostmonday - NOV",
+    year: "2025",
+    description:
+      "almostmonday opening for The Band Camino at the Brooklyn Paramount in November 2025.",
   },
   youngrisingsons: {
     name: "Young Rising Sons",
@@ -59,6 +65,11 @@ export const photographyPageDetails: PhotographyPageDetailsType = {
     name: "Haiden Henderson",
     year: "2025",
     description: "Haiden Henderson at his late show on The Tension Tour at Mercury Lounge in NYC."
+  },
+  thebandcamino: {
+    name: "The Band Camino",
+    year: "2025",
+    description: "The Band Camino plays the Brooklyn Paramount on their 'The Never Always' tour in November 2025."
   },
   patricia: {
     name: "patricia",
@@ -165,7 +176,7 @@ export const modifiedObjectCovers = {
   patricia: "50%_80%",
   minji: "50%_40%",
   youngrisingsons: "center_40%",
-  almostmonday: "center_20%",
+  almostmonday_feb: "center_20%",
   hana: "center_20%",
   jordyn: "center_25%",
   adrian: "center_25%",

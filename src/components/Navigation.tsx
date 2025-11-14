@@ -7,7 +7,7 @@ import SmallNavDirectory from "./SmallNavDirectory";
 import { cn } from "@/lib/utils";
 
 const Navigation = () => {
-  const [selectedTab, setSelectedTab] = useState<string>("");
+  const [selectedTab, setSelectedTab] = useState<string>("concerts");
   const [isSmallNavDirectoryShowing, setIsSmallNavDirectoryShowing] =
     useState<boolean>(false);
 
