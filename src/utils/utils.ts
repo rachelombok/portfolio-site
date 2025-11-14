@@ -69,7 +69,7 @@ export const photographyPageDetails: PhotographyPageDetailsType = {
   thebandcamino: {
     name: "The Band Camino",
     year: "2025",
-    description: "The Band Camino plays the Brooklyn Paramount on their 'The Never Always' tour in November 2025."
+    description: "The Band Camino plays the Brooklyn Paramount on their 'The NeverAlways' tour in November 2025."
   },
   patricia: {
     name: "patricia",
