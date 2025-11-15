@@ -6,7 +6,7 @@ const About = () => {
       <p className="md:text-5xl text-4xl font-bold my-8">hi, this is rachel 👋</p>
       <div className="space-y-8 md:text-lg text-md mb-8 text-muted-foreground">
         <p >
-          i am a hobbyist photographer, and this is my portfolio, <a href="https://github.com/rachelombok/portfolio-site" className="link underline text-zinc-800 hover:text-pink-200" target="_blank"
+          i am a hobbyist photographer, and this is my portfolio, <a href="https://blog.rachelombok.com/blog/building-photography-portfolio-site/" className="link underline text-zinc-800 hover:text-pink-200" target="_blank"
             rel="noopener">built by me</a>. i received a
           DSLR camera as a graduation present from my grandma in high school,
           and began seriously taking photos in college. i prefer photographing
