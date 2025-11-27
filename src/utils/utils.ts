@@ -71,6 +71,16 @@ export const photographyPageDetails: PhotographyPageDetailsType = {
     year: "2025",
     description: "The Band Camino plays the Brooklyn Paramount on their 'The NeverAlways' tour in November 2025."
   },
+  littleimage: {
+    name: "Little Image",
+    year: "2025",
+    description: "Little Image opens for The Academy Is... at Warsaw Concerts in Brooklyn, NY, November 2025.",
+  },
+  theacademyis: {
+    name: "The Academy Is...",
+    year: "2025",
+    description: "Final NYC show of 'The Academy Is... - Almost Here. 20th Anniversary Tour' at Warsaw Concerts in November 2025.",
+  },
   patricia: {
     name: "patricia",
     year: "2019",
