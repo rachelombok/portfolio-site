@@ -1,3 +1,14 @@
+### Photography Portfolio Site (Adobe Thomas Portfolio Theme)
+
+This site was built following the design of the [Adobe Thomas Portfolio Theme](https://portfolio.adobe.com/start), I wanted to make my own version. It is built using React, Next.js, TailwindCSS, and ImageKit. ImageKit is used as the CDN for the images storage. 
+
+![Portfolio screen for photo collections](/public/portfolio1.png)
+
+![Portfolio screen for specific individual collections](/public/portfolio2.png)
+
+![Film photo collage page](/public/portfolio3.png)
+
+---
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
