@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   title: "Rachel Ombok's Photography Portfolio",
   description: "built by rachel",
   keywords: [],
-  authors: [{name: 'Rachel Ombok'}],
+  authors: [{ name: 'Rachel Ombok' }],
   creator: 'Rachel Ombok'
 };
 
@@ -35,27 +35,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <VercelAnalyticsWrapper/>
+      <VercelAnalyticsWrapper />
       <head>
-      <link rel="stylesheet" href="https://use.typekit.net/siu1aok.css"></link>
-      <link rel='icon' href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🩰</text></svg>'/>
-      <link rel='apple-touch-icon' href='/apple-icon/data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🩰</text></svg>'/>
-    
+        <link rel="stylesheet" href="https://use.typekit.net/siu1aok.css"></link>
+        <link rel='icon' href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🩰</text></svg>' />
+        <link rel='apple-touch-icon' href='/apple-icon/data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🩰</text></svg>' />
+
       </head>
-      <GoogleTagManager gtmId={`${process.env.GTAG_CODE}`}/>
+      <GoogleTagManager gtmId={`${process.env.GTAG_CODE}`} />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased mx-auto max-w-[130rem]`}
       >
         <ImageKitProvider urlEndpoint={process.env.NEXT_PUBLIC_URL_ENDPOINT}>
 
-        
-        <Navigation/>
-        <TransitionPageWrapper>
-        {children}
-        </TransitionPageWrapper>
-       
-        <ScrollToTop/>
-        <Footer/>
+
+          <Navigation />
+          <TransitionPageWrapper>
+            {children}
+          </TransitionPageWrapper>
+
+          <ScrollToTop />
+          <Footer />
         </ImageKitProvider>
       </body>
     </html>

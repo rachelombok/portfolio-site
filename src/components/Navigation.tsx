@@ -14,7 +14,7 @@ const Navigation = () => {
   return (
     <div>
       <nav className="bg-white">
-        <div className="max-w-screen flex flex-wrap items-center justify-between mx-8 py-6 px-0 uppercase">
+        <div className="max-w-screen flex flex-wrap items-center justify-between mx-8 py-8 px-0 uppercase ">
           <Link
             href="/concerts"
             className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -48,7 +48,7 @@ const Navigation = () => {
             </svg>
           </button>
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-4 rtl:space-x-reverse md:mt-0 md:border-0">
               <Link
                 href="/concerts"
                 className={cn(`block py-2 px-3 rounded-sm  md:p-0`, selectedTab == "concerts" ? "text-neutral-800" : "")}
@@ -103,10 +103,10 @@ const Navigation = () => {
 
               <Link
                 href="/about"
-                className={cn(`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent font-semibold`, selectedTab == "about" ? "bg-gray-200" : "")}
+                className={cn(`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent font-semibold`, selectedTab == "about" ? "text-neutral-800" : "")}
                 onClick={() => setSelectedTab("about")}
               >
-                <li className="p-2 rounded-sm hover:bg-gray-200 active:bg-pink-200 active:text-gray-50">
+                <li className={cn("p-2 rounded-sm text-neutral-400 selected:text-neutral-800 font-semibold hover:text-neutral-800 active:bg-pink-200 active:text-gray-50 ", selectedTab == "about" ? "text-neutral-800" : "")}>
                   About
                 </li>
               </Link>
@@ -114,10 +114,10 @@ const Navigation = () => {
               <Link
                 type="button"
                 href="/contact"
-                className={cn(`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent font-semibold`, selectedTab == "contact" ? "bg-gray-200" : "")}
+                className={cn(`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent font-semibold`, selectedTab == "contact" ? "text-neutral-800" : "")}
                 onClick={() => setSelectedTab("contact")}
               >
-                <li className="p-2 rounded-sm hover:bg-gray-200 active:bg-pink-200 active:text-gray-50">
+                <li className={cn("p-2 rounded-sm text-neutral-400 selected:text-neutral-800 font-semibold hover:text-neutral-800 active:bg-pink-200 active:text-gray-50 ", selectedTab == "contact" ? "text-neutral-800" : "")}>
                   Contact
                 </li>
               </Link>
@@ -125,13 +125,9 @@ const Navigation = () => {
                 href="https://www.instagram.com/rachels.rchive"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="my-auto text-neutral-400 hover:text-neutral-800"
               >
-                <Image
-                  width={35}
-                  height={35}
-                  alt=""
-                  src="/icons8-instagram.svg"
-                />
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-instagram-icon lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
               </Link>
             </ul>
           </div>

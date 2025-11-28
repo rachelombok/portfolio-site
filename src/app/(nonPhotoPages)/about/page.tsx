@@ -16,7 +16,7 @@ const About = () => {
             rel="noopener">midnight riot magazine.</a>
         </p>
         <p>
-          most pictures here were shot with a nikon d3200 or a minolta xg7.{" "}
+          most pictures here were shot with a nikon d3200, minolta xg7, or sony a7iii.{" "}
         </p>
       </div>
       <Image src="/me.png" alt="A photo of me sitting on a bench in Elizabeth Garden in NYC, on Canon EOD." width={500} height={100} className="mx-auto" />
