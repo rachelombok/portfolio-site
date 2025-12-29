@@ -25,14 +25,8 @@ export const photographyPageDetails: PhotographyPageDetailsType = {
     description:
       "New York University's annual Violet 100 spirit week concert. Featuring performances from CamilosGarden, Destroy Lonely, Ken Carson, and headliner Baby Keem.",
   },
-  almostmonday_feb: {
-    name: "almostmonday - FEB",
-    year: "2025",
-    description:
-      "almostmonday headlining at Gramercy Theatre for the DIVE tour in February 2025. With opening act Adrian Lyles.",
-  },
-  almostmonday_nov: {
-    name: "almostmonday - NOV",
+  almostmonday: {
+    name: "almostmonday",
     year: "2025",
     description:
       "almostmonday opening for The Band Camino at the Brooklyn Paramount in November 2025.",
@@ -186,7 +180,6 @@ export const modifiedObjectCovers = {
   patricia: "50%_80%",
   minji: "50%_40%",
   youngrisingsons: "center_40%",
-  almostmonday_feb: "center_20%",
   hana: "center_20%",
   jordyn: "center_25%",
   adrian: "center_25%",

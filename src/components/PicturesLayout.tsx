@@ -13,7 +13,7 @@ const PicturesLayout = ({
 }: {
   directory: string;
 }) => {
-  const sort = directory == 'portraits' ? 'DESC_CREATED' : 'ASC_CREATED';
+  const sort = (directory == 'concerts' || directory == 'portraits') ? 'DESC_CREATED' : 'ASC_CREATED';
   const { data, error, isLoading } = useSWR(
     `https://api.imagekit.io/v1/files?type=folder&sort=${sort}&path=/${directory}/`,
     fetcher,
