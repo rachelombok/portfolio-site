@@ -92,7 +92,7 @@ export const photographyPageDetails: PhotographyPageDetailsType = {
   },
   cindy: {
     name: "cindy",
-    year: "",
+    year: "2025",
     description: "",
   },
   isabel: {
@@ -185,7 +185,6 @@ export const modifiedObjectCovers = {
   adrian: "center_25%",
   jolynn: "center_5%",
   shannon: "center_40%",
-
 };
 
 export const fetcher = (url: string) =>
