@@ -173,6 +173,11 @@ export const photographyPageDetails: PhotographyPageDetailsType = {
     description:
       "NYU Alumni Rachel Sennott and Ayo Edebiri host a stand-up comedy show for the student body.",
   },
+  hello82: {
+    name: "hello82 NYC Grand Opening",
+    year: "2026",
+    description: "Grand opening of hello82 NYC store in SoHo — a K-pop retail space centered on fan engagement, exclusive physical merchandise, independent vendors, and photocard trading."
+  }
 };
 
 export const modifiedObjectCovers = {
