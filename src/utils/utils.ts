@@ -75,6 +75,11 @@ export const photographyPageDetails: PhotographyPageDetailsType = {
     year: "2025",
     description: "Final NYC show of 'The Academy Is... - Almost Here. 20th Anniversary Tour' at Warsaw Concerts in November 2025.",
   },
+  forusbyus: {
+    name: "For Us, By Us",
+    year: "2026",
+    description: "FOR US, BY US 2 is a one-night-only Black cabaret experience celebrating Black joy, Black talent, Black music, and Black culture—through the lens of satire, soul, and storytelling."
+  },
   patricia: {
     name: "patricia",
     year: "2019",
