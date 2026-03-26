@@ -1,6 +1,38 @@
 import { photographyPageDetails } from "@/utils/utils";
 import GalleryContainer from "@/components/GalleryContainer";
 import Gallery from "@/components/Gallery";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ photographyPage: string; directoryPage: string }>;
+}): Promise<Metadata> {
+  const { photographyPage, directoryPage } = await params;
+  const photographDetails = photographyPageDetails[photographyPage];
+  return {
+    title: photographDetails?.name,
+    description: photographDetails?.description,
+    keywords: [
+      'photography',
+      'nyc photography',
+      'photography portfolio',
+      photographDetails?.name || '',
+    ],
+    openGraph: {
+      title: photographDetails?.name,
+      description: photographDetails?.description,
+      images: [
+        {
+          url: `https://ik.imagekit.io/miaszjuo8/${directoryPage}/${photographyPage}/${photographyPage}_01`,
+          width: 1200,
+          height: 630,
+          alt: photographDetails?.name,
+        },
+      ],
+    },
+  };
+}
 
 const photographyPage = async ({
   params,
@@ -8,7 +40,7 @@ const photographyPage = async ({
   params: Promise<{ photographyPage: string; directoryPage: string }>;
 }) => {
   const { directoryPage, photographyPage } = await params;
- 
+
   const photographDetails = photographyPageDetails[photographyPage];
   return (
     <>

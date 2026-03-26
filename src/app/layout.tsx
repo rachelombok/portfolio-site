@@ -38,8 +38,12 @@ export default function RootLayout({
       <VercelAnalyticsWrapper />
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/siu1aok.css"></link>
-        <link rel='icon' href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🩰</text></svg>' />
-        <link rel='apple-touch-icon' href='/apple-icon/data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🩰</text></svg>' />
+
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
 
       </head>
       <GoogleTagManager gtmId={`${process.env.GTAG_CODE}`} />
