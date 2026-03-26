@@ -22,8 +22,6 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Rachel Ombok's Photography Portfolio",
-  description: "built by rachel",
-  keywords: [],
   authors: [{ name: 'Rachel Ombok' }],
   creator: 'Rachel Ombok'
 };
