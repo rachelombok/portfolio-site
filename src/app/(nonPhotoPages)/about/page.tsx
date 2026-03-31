@@ -11,9 +11,9 @@ const About = () => {
           DSLR camera as a graduation present from my grandma in high school,
           and began seriously taking photos in college. i prefer photographing
           live events and concerts, and people in general. i am a contributing
-          photographer and writer to{" "}
-          <a href="https://midnightriotmag.com/" className="link underline text-zinc-800 hover:text-pink-200" target="_blank"
-            rel="noopener">midnight riot magazine.</a>
+          photographer and writer to <a href="https://bellmusicmag.com/" className="link underline text-zinc-800 hover:text-pink-200" target="_blank"
+            rel="noopener">bell music magazine</a> and <a href="https://midnightriotmag.com/" className="link underline text-zinc-800 hover:text-pink-200" target="_blank"
+              rel="noopener">midnight riot magazine.</a>
         </p>
         <p>
           most pictures here were shot with a nikon d3200, minolta xg7, or sony a7iii.{" "}
