@@ -182,6 +182,11 @@ export const photographyPageDetails: PhotographyPageDetailsType = {
     name: "hello82 NYC Grand Opening",
     year: "2026",
     description: "Grand opening of hello82 NYC store in SoHo — a K-pop retail space centered on fan engagement, exclusive physical merchandise, independent vendors, and photocard trading."
+  },
+  springfling: {
+    name: "PoP x Spring Fling",
+    year: "2026",
+    description: "Pursuit of Portraits Spring Fling community meetup event in Central Park."
   }
 };
 
