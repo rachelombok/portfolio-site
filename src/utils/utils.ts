@@ -80,6 +80,11 @@ export const photographyPageDetails: PhotographyPageDetailsType = {
     year: "2026",
     description: "FOR US, BY US 2 is a one-night-only Black cabaret experience celebrating Black joy, Black talent, Black music, and Black culture—through the lens of satire, soul, and storytelling."
   },
+  belles: {
+    name: "Belles",
+    year: "2026",
+    description: "Belles on her Songs & Stories Tour at The Bitter End in NYC. Opening set by Johnny Gates."
+  },
   patricia: {
     name: "patricia",
     year: "2019",
