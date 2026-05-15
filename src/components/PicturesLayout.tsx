@@ -38,14 +38,19 @@ const PicturesLayout = ({
   }
   return (
     <div className="grid md:grid-cols-4 grid-cols-1">
-      {(data || []).map((folder: ImageKitFolderResponseType, i: Key | null | undefined) => (
-        <ProjectCover
+      {(data || []).map((folder: ImageKitFolderResponseType, i: Key | null | undefined) => {
+        const isBelles = folder.name?.toLowerCase() == 'belles';
+
+        if (isBelles) return
+
+        return <ProjectCover
           imagePath={folder.name}
           key={i}
           directory={directory}
           isLoading={isLoading}
         />
-      ))}
+
+      })}
     </div>
   );
 };
