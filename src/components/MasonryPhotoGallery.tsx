@@ -4,8 +4,34 @@ import { Image, buildSrc } from "@imagekit/next";
 import { ImageKitImageResponseType } from "@/utils/utils";
 import { useState } from "react";
 
+const MasonryImage = ({ photo }: { photo: ImageKitImageResponseType }) => {
+  const [showPlaceholder, setShowPlaceholder] = useState(true);
+  return (
+    <Image
+      key={photo.filePath}
+      src={photo.filePath}
+      width={photo.width}
+      quality={90}
+      height={photo.height}
+      alt={`photo for ${photo.filePath}`}
+      className="w-full"
+      style={
+        showPlaceholder
+          ? {
+              backgroundImage: `url(${buildSrc({
+                urlEndpoint: process.env.NEXT_PUBLIC_URL_ENDPOINT || "",
+                src: photo.filePath,
+                transformation: [{ quality: 10, blur: 90 }],
+              })})`,
+            }
+          : {}
+      }
+      onLoad={() => setShowPlaceholder(false)}
+    />
+  );
+};
+
 const MasonryPhotoGallery = ({ photos }: { photos: [] }) => {
-  const [showPlaceholder, setShowPlaceholder] = useState<boolean>(true);
   return (
     <div>
       <ResponsiveMasonry
@@ -13,32 +39,7 @@ const MasonryPhotoGallery = ({ photos }: { photos: [] }) => {
       >
         <Masonry>
           {photos.map((photo: ImageKitImageResponseType) => (
-            <Image
-              key={photo.filePath}
-              src={photo.filePath}
-              width={photo.width}
-              quality={90}
-              height={photo.height}
-              alt={`photo for ${photo.filePath}`}
-              className="w-full"
-              style={
-                showPlaceholder
-                  ? {
-                      backgroundImage: `url(${buildSrc({
-                        urlEndpoint: process.env.NEXT_PUBLIC_URL_ENDPOINT || "",
-                        src: photo.filePath,
-                        transformation: [
-                          {
-                            quality: 10,
-                            blur: 90,
-                          },
-                        ],
-                      })})`,
-                    }
-                  : {}
-              }
-              onLoad={() => setShowPlaceholder(false)}
-            />
+            <MasonryImage key={photo.filePath} photo={photo} />
           ))}
         </Masonry>
       </ResponsiveMasonry>

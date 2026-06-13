@@ -37,7 +37,7 @@ const SmallNavDirectory = ({
                     className="block text-3xl font-semibold text-gray-900  uppercase"
                   >
                     
-                      Portaits
+                      Portraits
                     
                   </Link>
                   <Link

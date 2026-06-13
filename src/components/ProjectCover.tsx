@@ -41,6 +41,7 @@ const ProjectCover = ({
   const combinedClassName = cn(
     "w-full",
     "h-full",
+    "block",
     "aspect-[4/3]",
     "group-hover:brightness-75",
     "group-focus:brightness-75",

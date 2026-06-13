@@ -85,6 +85,11 @@ export const photographyPageDetails: PhotographyPageDetailsType = {
     year: "2026",
     description: "Belles on her Songs & Stories Tour at The Bitter End in NYC. Opening set by Johnny Gates."
   },
+  terror: {
+    name: "Terror",
+    year: "2026",
+    description: "Terror headlining the Black N Blue Bowl at the Brooklyn Monarch. Other sets by End It and Pain of Truth"
+  },
   patricia: {
     name: "patricia",
     year: "2019",

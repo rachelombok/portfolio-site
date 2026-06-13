@@ -2,11 +2,13 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import SmallNavDirectory from "./SmallNavDirectory";
 import { cn } from "@/lib/utils";
 
 const Navigation = () => {
-  const [selectedTab, setSelectedTab] = useState<string>("concerts");
+  const pathname = usePathname();
+  const selectedTab = pathname.split("/")[1] || "concerts";
   const [isSmallNavDirectoryShowing, setIsSmallNavDirectoryShowing] =
     useState<boolean>(false);
 
@@ -52,7 +54,6 @@ const Navigation = () => {
                 href="/concerts"
                 className={cn(`block py-2 px-3 rounded-sm  md:p-0`, selectedTab == "concerts" ? "text-neutral-800" : "")}
                 aria-current="page"
-                onClick={() => setSelectedTab("concerts")}
               >
                 <li className={cn("p-2 rounded-sm text-neutral-400 selected:text-neutral-800 font-semibold hover:text-neutral-800 active:bg-pink-200 active:text-pink-50 ", selectedTab == "concerts" ? "text-neutral-800" : "")}
                 >
@@ -63,7 +64,6 @@ const Navigation = () => {
               <Link
                 href="/portraits"
                 className={cn(`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent`, selectedTab == "portraits" ? "text-neutral-800" : "")}
-                onClick={() => setSelectedTab("portraits")}
               >
                 <li className={cn("p-2 rounded-sm text-neutral-400 selected:text-neutral-800 font-semibold hover:text-neutral-800 active:bg-pink-200 active:text-gray-50 ", selectedTab == "portraits" ? "text-neutral-800" : "")}>
                   Portraits
@@ -73,7 +73,6 @@ const Navigation = () => {
               <Link
                 href="/street"
                 className={cn(`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent`, selectedTab == "street" ? "text-neutral-800" : "")}
-                onClick={() => setSelectedTab("street")}
               >
                 <li className={cn("p-2 rounded-sm text-neutral-400 selected:text-neutral-800 font-semibold hover:text-neutral-800 active:bg-pink-200 active:text-gray-50 ", selectedTab == "street" ? "text-neutral-800" : "")}>
                   Street
@@ -83,7 +82,6 @@ const Navigation = () => {
               <Link
                 href="/film"
                 className={cn(`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent`, selectedTab == "film" ? "text-neutral-800" : "")}
-                onClick={() => setSelectedTab("film")}
               >
                 <li className={cn("p-2 rounded-sm text-neutral-400 selected:text-neutral-800 font-semibold hover:text-neutral-800 active:bg-pink-200 active:text-gray-50 ", selectedTab == "film" ? "text-neutral-800" : "")}>
                   Film
@@ -93,7 +91,6 @@ const Navigation = () => {
               <Link
                 href="/events"
                 className={cn(`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent`, selectedTab == "events" ? "text-neutral-800" : "")}
-                onClick={() => setSelectedTab("events")}
               >
                 <li className={cn("p-2 rounded-sm text-neutral-400 selected:text-neutral-800 font-semibold hover:text-neutral-800 active:bg-pink-200 active:text-gray-50 ", selectedTab == "events" ? "text-neutral-800" : "")}>
                   Events
@@ -103,7 +100,6 @@ const Navigation = () => {
               <Link
                 href="/about"
                 className={cn(`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent font-semibold`, selectedTab == "about" ? "text-neutral-800" : "")}
-                onClick={() => setSelectedTab("about")}
               >
                 <li className={cn("p-2 rounded-sm text-neutral-400 selected:text-neutral-800 font-semibold hover:text-neutral-800 active:bg-pink-200 active:text-gray-50 ", selectedTab == "about" ? "text-neutral-800" : "")}>
                   About
@@ -114,7 +110,6 @@ const Navigation = () => {
                 type="button"
                 href="/contact"
                 className={cn(`block py-2 px-3 rounded-sm md:border-0 md:p-0 md:dark:hover:bg-transparent font-semibold`, selectedTab == "contact" ? "text-neutral-800" : "")}
-                onClick={() => setSelectedTab("contact")}
               >
                 <li className={cn("p-2 rounded-sm text-neutral-400 selected:text-neutral-800 font-semibold hover:text-neutral-800 active:bg-pink-200 active:text-gray-50 ", selectedTab == "contact" ? "text-neutral-800" : "")}>
                   Contact

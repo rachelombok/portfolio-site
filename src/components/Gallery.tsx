@@ -10,12 +10,44 @@ import LoadingChip from "./LoadingChip";
 import ErrorChip from "./ErrorChip";
 import ImageCarousel from "./ImageCarousel";
 
+const GalleryImage = ({
+  photo,
+  onClick,
+}: {
+  photo: ImageKitImageResponseType;
+  onClick: () => void;
+}) => {
+  const [showPlaceholder, setShowPlaceholder] = useState(true);
+  return (
+    <Image
+      src={photo.filePath}
+      alt="pic"
+      width={1900}
+      height={300}
+      className="bg-gray-200 cursor-zoom-in"
+      quality={90}
+      style={
+        showPlaceholder
+          ? {
+              backgroundImage: `url(${buildSrc({
+                urlEndpoint: process.env.NEXT_PUBLIC_URL_ENDPOINT || "",
+                src: photo.filePath,
+                transformation: [{ quality: 10, blur: 90 }],
+              })})`,
+            }
+          : {}
+      }
+      onLoad={() => setShowPlaceholder(false)}
+      onClick={onClick}
+    />
+  );
+};
+
 const Gallery = ({
   folderPath,
 }: {
   folderPath: string;
 }) => {
-  const [showPlaceholder, setShowPlaceholder] = useState<boolean>(true);
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
@@ -48,41 +80,16 @@ const Gallery = ({
 
   return (
     <div className="space-y-6">
-      {(data || []).map((photo: ImageKitImageResponseType, index: Key | null | undefined) => (
-
-        <Image
-          src={photo.filePath}
-          alt="pic"
-          key={index}
-          width={1900}
-          height={300}
-          className="bg-gray-200 cursor-zoom-in"
-          quality={90}
-          style={
-            showPlaceholder
-              ? {
-                backgroundImage: `url(${buildSrc({
-                  urlEndpoint: process.env.NEXT_PUBLIC_URL_ENDPOINT || "",
-                  src: photo.filePath,
-                  transformation: [
-                    {
-                      quality: 10,
-                      blur: 90,
-                    },
-                  ],
-                })})`,
-              }
-              : {}
-          }
-          onLoad={() => setShowPlaceholder(false)}
+      {(data || []).map((photo: ImageKitImageResponseType, i: Key | null | undefined) => (
+        <GalleryImage
+          key={i}
+          photo={photo}
           onClick={() => {
-            const idx = (index ?? 0);
             setOpen(true);
-            setIndex(Number(idx));
+            setIndex(Number(i ?? 0));
           }}
         />
-      )
-      )
+      ))
       }
       {open && (
         <ImageCarousel
