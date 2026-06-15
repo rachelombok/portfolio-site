@@ -37,23 +37,11 @@ export const photographyPageDetails: PhotographyPageDetailsType = {
     description:
       "Young Rising Sons opening for DREAMERS at the Gramercy Theatre in November 2022.",
   },
-  kaashpaige: {
-    name: "kaash paige",
-    year: "2023",
-    description:
-      "Kaash Paige on her 'Me vs. Myself' tour at Baby's All Right in February 2023.",
-  },
   embeihold: {
     name: "Em Beihold",
     year: "2025",
     description:
       "Em Beihold performs at her super small semi-secret piano tour at Joe's Pub in NYC. Featuring opening set by E. Woolf.",
-  },
-  theamericans: {
-    name: "The Americans",
-    year: "2023",
-    description:
-      "The Americans during their exclusive show at The Bitter End in NYC.",
   },
   haidenhenderson: {
     name: "Haiden Henderson",
@@ -89,6 +77,11 @@ export const photographyPageDetails: PhotographyPageDetailsType = {
     name: "Terror",
     year: "2026",
     description: "Terror headlining the Black N Blue Bowl at the Brooklyn Monarch. Other sets by End It and Pain of Truth"
+  },
+  embeihold_2: {
+    name: "Em Beihold",
+    year: "2026",
+    description: "Em Beihold brings her 'Tales of a Failed Shapeshifter' tour to the Music Hall of Williamsburg in Brooklyn, NY, May 2026.",
   },
   patricia: {
     name: "patricia",
